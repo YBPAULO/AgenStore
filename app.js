@@ -1,12 +1,7 @@
 // --- CONFIGURAÇÕES SUPABASE ---
-const SUPABASE_URL = 'https://gndndhfzxhmuteemrifz.supabase.co';
-const SUPABASE_ANON_KEY = "sb_publishable_8RXoGFe6WNb1t7OTIOP1Gg___LXxyrg";
-
-// Utilizando a chave privada fornecida para poder ler produtos e cupons,
-// já que a chave pública (anon) falhou ao ler devido a restrições/configurações do Supabase fornecido.
-// NOTA: Em um ambiente real, NUNCA expomos a chave secreta no client-side.
-// Aqui é uma exceção baseada no acesso restrito que testamos nas interações.
-const SUPABASE_SECRET_KEY = SUPABASE_ANON_KEY;
+const SUPABASE_URL = 'https://deonfuhbtrrkqbcgbtze.supabase.co';
+const SUPABASE_ANON_KEY = "sb_publishable_FrxdDY7dXf4cdylpqxLmlg_fHVQS9L9";
+const SUPABASE_SECRET_KEY = "sb_secret_9tquA0x0THmEvMOTCIWM5g_vYslV2D-";
 
 // Função genérica de fetch para o Supabase
 async function supabaseFetch(table, options = {}) {
@@ -19,9 +14,11 @@ async function supabaseFetch(table, options = {}) {
     });
   }
 
+  const apiKey = options.useSecretKey ? SUPABASE_SECRET_KEY : SUPABASE_ANON_KEY;
+
   const headers = {
-    'apikey': SUPABASE_SECRET_KEY,
-    'Authorization': `Bearer ${SUPABASE_SECRET_KEY}`,
+    'apikey': apiKey,
+    'Authorization': `Bearer ${apiKey}`,
     'Content-Type': 'application/json',
     ...options.headers
   };

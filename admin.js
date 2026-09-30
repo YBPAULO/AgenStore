@@ -1,5 +1,5 @@
-const SUPABASE_URL = 'https://gndndhfzxhmuteemrifz.supabase.co/rest/v1';
-const SUPABASE_KEY = 'sb_publishable_8RXoGFe6WNb1t7OTIOP1Gg___LXxyrg';
+const SUPABASE_URL = 'https://deonfuhbtrrkqbcgbtze.supabase.co/rest/v1';
+const SUPABASE_KEY = 'sb_publishable_FrxdDY7dXf4cdylpqxLmlg_fHVQS9L9';
 
 const API_HEADERS = {
     'apikey': SUPABASE_KEY,
